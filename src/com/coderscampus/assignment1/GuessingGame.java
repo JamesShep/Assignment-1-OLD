@@ -13,7 +13,7 @@ public class GuessingGame {
         //variables
         //not 100% sure on use of final ints
         final int MAX_NUMBER = 100; //This number is INCLUSIVE
-        final int MIN_NUMBER = 0; //This number is EXCLUSIVE
+        final int MIN_NUMBER = 1; //This number is INCLUSIVE
         int numberOfGuesses = 5;
         int playerGuessNumber = 0;
         int randomNumber;
@@ -33,9 +33,9 @@ public class GuessingGame {
         System.out.println("RULES:");
         System.out.println("You have " + numberOfGuesses + " guesses");
         System.out.println("You need to guess a number between " +
-                (MIN_NUMBER + 1) + " and " + MAX_NUMBER);
+                MIN_NUMBER + " and " + MAX_NUMBER);
         System.out.println("The random number can be INCLUSIVE");
-        System.out.println("This means, it can be " + (MIN_NUMBER + 1) +
+        System.out.println("This means, it can be " + MIN_NUMBER +
                 ", and it can be " + MAX_NUMBER);
         System.out.println("A guess outside of these numbers does NOT count towards " +
                 "your guess count");
@@ -48,7 +48,7 @@ public class GuessingGame {
                     + MAX_NUMBER);
             playerGuess = input.nextInt();
 
-            if (playerGuess <= MIN_NUMBER || playerGuess >= MAX_NUMBER) {
+            if (playerGuess < MIN_NUMBER || playerGuess > MAX_NUMBER) {
                 System.out.println("Your guess is not between " + MIN_NUMBER + " and " +
                         MAX_NUMBER + ", please try again");
             }
