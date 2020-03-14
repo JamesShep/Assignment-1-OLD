@@ -21,7 +21,7 @@ public class GuessingGame {
 
         //setup of random number object, and assignment max limit
         Random random = new Random();
-        randomNumber = (random.nextInt(MAX_NUMBER)+1);
+        randomNumber = random.nextInt(MAX_NUMBER)+1;
 
         //the below code line was added for testing purposes only, and
         //can be un-commented to allow an output of the random number
@@ -65,8 +65,8 @@ public class GuessingGame {
                 break;
             }
         }
-        if (playerGuessNumber == (numberOfGuesses)) {
-            System.out.println("Your lose!");
+        if (playerGuessNumber == numberOfGuesses) {
+            System.out.println("You lose!");
             System.out.println("The number to guess was: " + randomNumber);
         }
         input.close();
